@@ -16,11 +16,11 @@ public class PizzaGuiFrame extends JFrame {
 
     public PizzaGuiFrame() {
         setTitle("Pizza Order");
-        setSize(700, 500); // Adjusted size
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout(10, 10)); // Add padding between components
-        getContentPane().setBackground(new Color(230, 230, 250)); // Light lavender background for frame
+        setLayout(new BorderLayout(10, 10));
+        getContentPane().setBackground(new Color(230, 230, 250));
 
         // Layout and add all panels
         add(createTopPanel(), BorderLayout.NORTH);
@@ -36,7 +36,7 @@ public class PizzaGuiFrame extends JFrame {
         // Crust panel
         JPanel crustPanel = new JPanel();
         crustPanel.setBorder(BorderFactory.createTitledBorder("Crust Type"));
-        crustPanel.setBackground(new Color(255, 255, 204)); // Light yellow background
+        crustPanel.setBackground(new Color(255, 255, 204));
         thinCrustBtn = new JRadioButton("Thin");
         regularCrustBtn = new JRadioButton("Regular");
         deepDishCrustBtn = new JRadioButton("Deep-dish");
@@ -67,8 +67,8 @@ public class PizzaGuiFrame extends JFrame {
     }
 
     private JPanel createCenterPanel() {
-        JPanel centerPanel = new JPanel(new GridLayout(1, 2, 20, 0)); // Add space between panels
-        centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Add padding
+        JPanel centerPanel = new JPanel(new GridLayout(1, 2, 20, 0));
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         centerPanel.add(createToppingsPanel());
         centerPanel.add(createSummaryPanel());
@@ -77,15 +77,15 @@ public class PizzaGuiFrame extends JFrame {
     }
 
     private JPanel createToppingsPanel() {
-        JPanel panel = new JPanel(new GridLayout(3, 2, 10, 10)); // Toppings in a 3x2 grid with padding
+        JPanel panel = new JPanel(new GridLayout(3, 2, 10, 10));
         panel.setBorder(BorderFactory.createTitledBorder("Toppings"));
-        panel.setBackground(new Color(204, 255, 204)); // Light green background
+        panel.setBackground(new Color(204, 255, 204));
 
         String[] toppingNames = {"Pepperoni", "Mushrooms", "Onions", "Bacon", "Olives", "Pineapple", "Cheese", "Meatball", "Green Pepper", "Basil"};
         toppings = new JCheckBox[toppingNames.length];
         for (int i = 0; i < toppingNames.length; i++) {
             toppings[i] = new JCheckBox(toppingNames[i]);
-            toppings[i].setBackground(new Color(204, 255, 204)); // Same light green background for checkboxes
+            toppings[i].setBackground(new Color(204, 255, 204));
             panel.add(toppings[i]);
         }
 
@@ -95,11 +95,11 @@ public class PizzaGuiFrame extends JFrame {
     private JPanel createSummaryPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Order Summary"));
-        panel.setBackground(new Color(204, 229, 255)); // Light blue background
+        panel.setBackground(new Color(204, 229, 255));
 
         order = new JTextArea(10, 30);
         order.setEditable(false);
-        order.setBackground(new Color(230, 247, 255)); // Slightly lighter blue background for text area
+        order.setBackground(new Color(230, 247, 255));
         JScrollPane scrollPane = new JScrollPane(order);
         panel.add(scrollPane, BorderLayout.CENTER);
 
@@ -108,8 +108,8 @@ public class PizzaGuiFrame extends JFrame {
 
     private JPanel createButtonPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10)); // Center buttons with padding
-        panel.setBackground(new Color(240, 240, 240)); // Light gray background
+        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        panel.setBackground(new Color(240, 240, 240));
 
         orderBtn = createButton("Order", e -> displayOrder());
         clearBtn = createButton("Clear", e -> clearForm());
@@ -177,8 +177,8 @@ public class PizzaGuiFrame extends JFrame {
 
     private JButton createButton(String text, java.awt.event.ActionListener action) {
         JButton button = new JButton(text);
-        button.setBackground(new Color(30, 144, 255)); // Dodger blue background
-        button.setForeground(Color.WHITE); // White text
+        button.setBackground(new Color(30, 144, 255)); //
+        button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
         button.addActionListener(action);
         return button;
